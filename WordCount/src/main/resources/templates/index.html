@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Word Counter for VOA</title>
+</head>
+<body>
+  <h1>英単語カウンター(for VOA Learning English)</h1>
+  <p><a href="https://learningenglish.voanews.com/">VOA Learning English</a>の記事本文に含まれる英単語の数を自動で数えます。</p>
+  <p>記事のURLを入力してください。</p>
+  <form th:action="@{/}" th:object="${form}" method="post">
+    <input type="text" th:field="*{url}" placeholder="URLを入力" style="width:80%;"><br>
+    <button>単語数取得</button>
+  </form>
+  <p>単語数：<span th:text="${wordCount}"></span></p>
+</body>

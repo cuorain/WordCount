@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8" />
+    <title>404Error</title>
+</head>
+<body>
+    <h1 th:text="${status} + ' ' + ${message}"></h1>
+    <p>エラーです</p>
+    <p th:text="${stacktrace}"></p>
+    <p>トップページに戻ってください</p>
+    <form method="get" th:action="@{/}">
+        <button class="btn btn-link" type="submit">トップページに戻る</button>
+    </form>
+</body>
+</html>
